@@ -17,27 +17,6 @@
             width: 100vw;
         }
         
-        .navbar a {
-            float: left;
-            font-size: 25px;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            border: 5px solid black;
-        }
-        
-        .navbar a.active {
-            float: left;
-            font-size: 25px;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            border: 5px solid black;
-            background-color: greenyellow;
-        }
-        
         a:hover,
         a.active:hover {
             background-color: red;
@@ -86,6 +65,14 @@
             margin-right: 5vw;
             font-size: 20px;
         }
+        
+        @media screen and (max-width: 960px){
+            a {
+                margin-left: 1vw;
+                width: 32vw;
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -97,11 +84,6 @@
         <img src="Logo.jpg" alt="Pic">
         <!--Ảnh-->
     </header>
-    <div class="navbar">
-        <a href="Home.html" class="active">Home</a>
-        <a href="Hyperlink.html">Hyperlink Menu 1</a>
-        <a href="Hyperlink.html">Hyperlink Menu 2</a>
-    </div>
     <main>
         <div class="top">
             <a href="Hyperlink.html">Hyperlink Main 1</a>
