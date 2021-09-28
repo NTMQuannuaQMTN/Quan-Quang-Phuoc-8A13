@@ -74,9 +74,8 @@
     <script>
         function getClassName()
         {
-            var cl=event.target.className;
-            var word=document.getElementsByClassName(cl);
-            responsiveVoice.speak(word, "Vietnamese Male");
+            var word=document.getElementsByClassName(event.target.className);
+            alert(word);
         }
     </script>
 </body>
