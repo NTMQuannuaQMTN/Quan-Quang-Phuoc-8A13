@@ -3,6 +3,7 @@
 <head>
     <title>Hyperlink</title>
     <meta charset="utf-8">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=1uJ6zZVG"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -72,6 +73,10 @@
         <a>Bạn mấy tuổi</a>
         <a>Bạn đi đâu thế</a>
     </main>
+    <script>
+        var word = document.getElementsbyClassName(event.target.ClassName)[0].innerHTML;
+        responsiveVoice.speak(word, "Vietnamese Male");
+    </script>
 </body>
 
 </html>
