@@ -67,15 +67,18 @@
         </h1>
     </header>
     <main>
-        <a>Chào bạn</a>
-        <a>Bạn khỏe không</a>
-        <a>Bạn tên gì</a>
-        <a>Bạn mấy tuổi</a>
-        <a>Bạn đi đâu thế</a>
+        <a class="S1" onclick="getClassName()">Chào bạn</a>
+        <a class="S2" onclick="getClassName()">Bạn khỏe không</a>
+        <a class="S3" onclick="getClassName()">Bạn tên gì</a>
+        <a class="S4" onclick="getClassName()">Bạn mấy tuổi</a>
+        <a class="S5" onclick="getClassName()">Bạn đi đâu thế</a>
     </main>
     <script>
-        var word = document.getElementsbyClassName(event.target.ClassName)[0].innerHTML;
-        responsiveVoice.speak(word, "Vietnamese Male");
+        function getClassName()
+        {
+            var word=document.getElementsByClassName(event.target.className)[0].innerHTML;
+            responsiveVoice.speak(word, "Vietnamese Male");
+        }
     </script>
 </body>
 
