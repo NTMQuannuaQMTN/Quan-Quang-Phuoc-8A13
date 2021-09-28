@@ -74,7 +74,7 @@
     <script>
         function getClassName()
         {
-            var word=document.getElementsByClassName(event.target.className);
+            var word=document.getElementsByClassName(event.target.className)[0].innerHTML;
             alert(word);
         }
     </script>
