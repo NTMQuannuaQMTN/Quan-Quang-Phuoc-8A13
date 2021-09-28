@@ -2,7 +2,6 @@
 
 <head>
     <title>Hyperlink</title>
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=1uJ6zZVG"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -67,10 +66,17 @@
         </h1>
     </header>
     <main>
-        <a>Câu 1</a>
-        <a>Câu 2</a>
-        <a>Câu 3</a>
+        <a class="S1" onclick="getClassName()">Câu 1</a>
+        <a class="S2" onclick="getClassName()">Câu 2</a>
+        <a class="S3" onclick="getClassName()">Câu 3</a>
     </main>
+    <script>
+        function getClassName()
+        {
+            var cl=event.target.className;
+            alert(cl);
+        }
+    </script>
 </body>
 
 </html>
