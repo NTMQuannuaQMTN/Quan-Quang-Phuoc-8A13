@@ -65,8 +65,6 @@
       
     </main>
     <script>
-        function recording()
-        {
             window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             const recognition = new SpeechReccognition();
             recognition.interimResults = true;
@@ -86,9 +84,8 @@
                 words.appendChild(p);
               }
             });
-            recognition.addEventListener('end', recognition.start
+            recognition.addEventListener('end', recognition.start)
             recognition.start();
-        }
     </script>
   </body>
 </html>
