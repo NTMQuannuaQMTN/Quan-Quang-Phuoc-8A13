@@ -75,15 +75,13 @@
         <a class="S4" onclick="getClassName()">Bạn mấy tuổi</a>
         <a class="S5" onclick="getClassName()">Bạn đi đâu thế</a>
     </main>
-    <footer>
-        <a href="Rec.html">Ghi âm</a>
-    </footer>
     <script>
         function getClassName()
         {
-            var word=document.getElementsByClassName(event.target.className)[0].innerHTML;
-            responsiveVoice.speak(word, "Vietnamese Male");
-            responsiveVoice.speak(word, "Vietnamese Female");
+            var mword=document.getElementsByClassName(event.target.className)[0].innerHTML;
+            responsiveVoice.speak(mword, "Vietnamese Male");
+            var fword=document.getElementsByClassName(event.target.className)[0].innerHTML;
+            responsiveVoice.speak(fword, "Vietnamese Female");
         }
     </script>
 </body>
