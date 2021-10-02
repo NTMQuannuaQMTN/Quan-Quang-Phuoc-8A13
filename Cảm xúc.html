@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Cảm xúc</title>
+    <meta charset="utf-8">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=1uJ6zZVG"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: rgb(1, 255, 255);
+        }
+        
+        a:hover,
+        i:hover {
+            background-color: red;
+        }
+        
+        header {
+            width: 100vw;
+            height: 85.2px;
+            background-color: rgb(0, 177, 255);
+            float: right;
+            display: block;
+            margin-top: -123px;
+        }
+        
+        header h1 {
+            width: 81vw;
+            font-size: 8vh;
+            color: white;
+            display: inline-block;
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+        
+        main a {
+            display: block;
+            background-color: rgb(1, 254, 171);
+            width: 100vw;
+            padding: 7.5px 0;
+            margin-top: 20vh;
+            font-size: 85px;
+        }
+        
+        i {
+            display: block;
+            background-color: rgb(0, 255, 1);
+            color: black;
+            width: 13.863vw;
+            height: 13.863vh;
+            text-align: center;
+        }
+        
+        .fa {
+            font-size: 84px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="Home.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        <h1>
+            NỘI DUNG
+        </h1>
+    </header>
+    <main>
+        <a class="S1" onclick="getClassName()">Tôi vui lắm!!!</a>
+        <a class="S2" onclick="getClassName()">Giờ tôi cảm thấy rất thất vọng</a>
+        <a class="S3" onclick="getClassName()">Hôm nay vui thật đấy!</a>
+    </main>
+    <script>
+        function getClassName()
+        {
+            var word=document.getElementsByClassName(event.target.className)[0].innerHTML;
+            responsiveVoice.speak(word, "Vietnamese Male");
+        }
+    </script>
+</body>
+
+</html>
