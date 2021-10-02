@@ -74,9 +74,10 @@
     <script>
         function getClassName()
         {
-            var word=document.getElementsByClassName(event.target.className)[0].innerHTML;
-            responsiveVoice.speak(word, "Vietnamese Male");
-            responsiveVoice.speak(word, "Vietnamese Female");
+            var mword=document.getElementsByClassName(event.target.className)[0].innerHTML;
+            responsiveVoice.speak(mword, "Vietnamese Male");
+            var fword=document.getElementsByClassName(event.target.className)[0].innerHTML;
+            responsiveVoice.speak(fword, "Vietnamese Female");
         }
     </script>
 </body>
