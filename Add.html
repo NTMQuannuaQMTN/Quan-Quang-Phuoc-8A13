@@ -56,6 +56,18 @@
         .fa {
             font-size: 84px;
         }
+        
+        form {
+            color: black;
+            font-size: 10vh;
+            margin-top: 10vh;
+        }
+        
+        button {
+            height: 5vh;
+            width: 5vw;
+            font-size: 15px;
+        }
     </style>
 </head>
 
@@ -68,7 +80,10 @@
     </header>
     <main>
       <form>
-        <label>Nhập từ cần nói: <input type="text" class="Input"></label>
+        <label>Nhập từ cần nói:</label>
+        <br>
+        <input type="text" class="Input" row=15 column=250>
+        <br>
         <button type="submit" onclick="getClassName()">
       </form>
     </main>
