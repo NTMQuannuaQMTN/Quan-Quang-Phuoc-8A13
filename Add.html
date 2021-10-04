@@ -79,10 +79,10 @@
         </h1>
     </header>
     <main>
-      <form>
+      <form name="input">
         <label>Nhập từ cần nói:</label>
         <br>
-        <input type="text" class="Input" row=15 column=250>
+        <input type="text" id="Input" row=15 column=250>
         <br>
         <button type="submit" onclick="getClassName()">SUBMIT</button>
       </form>
@@ -90,7 +90,7 @@
     <script>
         function getClassName()
         {
-            var word=document.getElementsByClassName("Input")[0].innerHTML;
+            var word=document.forms["input"]["Input"].value;
             responsiveVoice.speak(word, "Vietnamese Male");
         }
     </script>
