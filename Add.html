@@ -84,7 +84,7 @@
         <br>
         <input type="text" id="Input" row=15 column=250>
         <br>
-        <button type="submit" onclick="getClassName()">SUBMIT</button>
+        <button type="submit" onclick="return getClassName()">SUBMIT</button>
       </form>
     </main>
     <script>
@@ -92,6 +92,7 @@
         {
             var word=document.forms["input"]["Input"].value;
             responsiveVoice.speak(word, "Vietnamese Male");
+            return false;
         }
     </script>
 </body>
