@@ -18,6 +18,7 @@
         }
         
         header {
+          position: fixed;
             width: 100vw;
             height: 85.2px;
             background-color: rgb(0, 177, 255);
@@ -37,6 +38,8 @@
         
         p {
           color: black;
+          display: block;
+          background-color: white;
         }
         
         i {
@@ -51,6 +54,12 @@
         .fa {
             font-size: 84px;
         }
+      
+        main h1 {
+           color: black;
+           font-size: 85px;
+           text-align: center;
+        }
     </style>
   </head>
 
@@ -62,18 +71,36 @@
         </h1>
     </header>
     <main>
-      
+      <h1>NỘI DUNG CUỘC GHI ÂM</h1>
     </main>
     <script>
-        "audio": {
-          "content": "/* Your audio */"
-        },
-        "config": {
-          "enableAutomaticPunctuation": true,
-          "encoding": "LINEAR16",
-          "languageCode": "en-US",
-          "model": "default"
+      window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      
+      const recognition = new SpeechRecognition();
+      recognition.interimResults = true;
+      
+      let p = document.createElement('p');
+      const words = document.querySelector('.words');
+      words.appendChild(p);
+      
+      recognition.addEventListener('results', e => {
+        console.log(e.results);
+        const transcript = Array.from(e.results);
+        .map(result = result[0]);
+        .map(result = result.transcript);
+        .join('');
+        
+        p.textContent = transcript;
+        if (e.results[0].isFinal) {
+          p = document.createElement('p');
+          words.appendChild(p);
         }
+        console.log(transcript);
+      });
+      
+      recognition.addEventListener('end', recognition.start);
+      
+      recognition.start();
     </script>
   </body>
 </html>
