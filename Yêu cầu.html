@@ -1,74 +1,15 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-    <title>Yêu cầu</title>
+    <title>Chào hỏi</title>
     <meta charset="utf-8">
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=1uJ6zZVG"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            background-color: rgb(1, 255, 255);
-        }
-        
-        a:hover,
-        i:hover {
-            background-color: red;
-        }
-        
-        header {
-            position: fixed;
-            width: 100vw;
-            height: 85.2px;
-            background-color: rgb(0, 177, 255);
-            float: right;
-            display: block;
-            margin-top: -123px;
-        }
-        
-        header h1 {
-            width: 81vw;
-            font-size: 8vh;
-            color: white;
-            display: inline-block;
-            margin-left: 25px;
-            margin-top: 20px;
-        }
-        
-        main a {
-            display: block;
-            background-color: rgb(1, 254, 171);
-            width: 100vw;
-            padding: 7.5px 0;
-            margin-top: 20vh;
-            font-size: 85px;
-        }
-        
-        i {
-            display: block;
-            background-color: rgb(0, 255, 1);
-            color: black;
-            width: 13.863vw;
-            height: 13.863vh;
-            text-align: center;
-        }
-        
-        .fa {
-            font-size: 84px;
-        }
-        
-        a form {
-            display: inline-block;
-            margin-left: 28vw;
-        }
-        
-        input {
-            width: 63vw;
-            margin-top: -120px;
-            background-color: rgb(1, 254, 171);
-        }
-    </style>
+    <link rel="stylesheet" href="TextToRead.css">
 </head>
 
 <body>
@@ -83,20 +24,15 @@
         <a class="S2" onclick="getClassName()">Cậu giúp tôi cái này được không?</a>
         <a class="S3" onclick="getClassName()">Cậu có thể phụ tôi một tay chứ?</a>
         <a class="S4">Tôi muốn <form name="IWANT"><input type="text" id="Toi-muon" row=15 onsubmit="return false" onchange="return getClassNameinForm()"></form></a>
+        <div class="rec">
+             <a href="Rec.html"><i class="fa fa-microphone" aria-hidden="true"></i></a>
+        </div>
     </main>
     <script>
         function getClassName()
         {
             var word=document.getElementsByClassName(event.target.className)[0].innerHTML;
             responsiveVoice.speak(word, "Vietnamese Male");
-        }
-        
-        function getClassNameinForm()
-        {
-            var word=document.forms["IWANT"]["Toi-muon"].value;
-            var string="Tôi muốn " + word;
-            responsiveVoice.speak(string, "Vietnamese Male");
-            return false;
         }
     </script>
 </body>
