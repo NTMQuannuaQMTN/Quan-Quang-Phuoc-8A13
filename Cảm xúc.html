@@ -7,57 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            background-color: rgb(1, 255, 255);
-        }
-        
-        a:hover,
-        i:hover {
-            background-color: red;
-        }
-        
-        header {
-            position: fixed;
-            width: 100vw;
-            height: 85.2px;
-            background-color: rgb(0, 177, 255);
-            float: right;
-            display: block;
-            margin-top: -123px;
-        }
-        
-        header h1 {
-            width: 81vw;
-            font-size: 8vh;
-            color: white;
-            display: inline-block;
-            margin-left: 25px;
-            margin-top: 20px;
-        }
-        
-        main a {
-            display: block;
-            background-color: rgb(1, 254, 171);
-            width: 100vw;
-            padding: 7.5px 0;
-            margin-top: 20vh;
-            font-size: 85px;
-        }
-        
-        i {
-            display: block;
-            background-color: rgb(0, 255, 1);
-            color: black;
-            width: 13.863vw;
-            height: 13.863vh;
-            text-align: center;
-        }
-        
-        .fa {
-            font-size: 84px;
-        }
-    </style>
+    <link rel="stylesheet" href="TextToRead.css">
 </head>
 
 <body>
@@ -73,6 +23,9 @@
         <a class="S3" onclick="getClassName()">Hôm nay vui thật đấy!</a>
         <a class="S4" onclick="getClassName()">Cảm ơn</a>
         <a class="S5" onclick="getClassName()">Xin lỗi</a>
+        <div class="rec">
+             <a href="Rec.html"><i class="fa fa-microphone" aria-hidden="true"></i></a>
+        </div>
     </main>
     <script>
         function getClassName()
