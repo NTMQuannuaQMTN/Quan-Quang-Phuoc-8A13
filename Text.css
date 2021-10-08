@@ -1,102 +1,70 @@
 body {
-background-color: white;
-}
+            background-color: rgb(1, 255, 255);
+        }
 
-.navbar {
-overflow: hidden;
-display: inline-block;
-background-color: #5253a5d3;
-width: 100vw;
-}
+        a:hover,
+        i:hover {
+            background-color: red;
+        }
 
-a:hover,
-a.active:hover {
-background-color: red;
-color: white;
-font-style: bold;
-}
+        header {
+            position: fixed;
+            width: 100vw;
+            height: 85.2px;
+            background-color: rgb(0, 177, 255);
+            float: right;
+            display: block;
+            margin-top: -123px;
+        }
 
-header {
-width: 100vw;
-height: fit-content;
-background-color: rgb(151, 197, 197);
-float: left;
-display: block;
-}
+        header h1 {
+            width: 81vw;
+            font-size: 8vh;
+            color: white;
+            display: inline-block;
+            margin-left: 25px;
+            margin-top: 20px;
+        }
 
-header h1 {
-width: 55vw;
-font-size: 8vh;
-color: blue;
-display: inline-block;
-margin-left: 25px;
-margin-top: 20px;
-}
+        main a {
+            display: block;
+            background-color: rgb(1, 254, 171);
+            width: 100vw;
+            padding: 7.5px 0;
+            margin-top: 20vh;
+            font-size: 85px;
+        }
 
-img {
-float: right;
-width: 15vw;
-aspect-ratio: 1.33002481;
-}
+        header i {
+            display: block;
+            background-color: rgb(0, 255, 1);
+            color: black;
+            width: 13.863vw;
+            height: 13.863vh;
+            text-align: center;
+        }
 
-.grid-container {
-display: inline-grid;
-grid-template-columns: auto auto auto;
-background-color: #2196F3;
-padding: 10px;
-width: 100vw;
-}
-
-.grid-item {
-background-color: rgba(255, 255, 255, 0.8);
-border: 1px solid rgba(0, 0, 0, 0.8);
-padding: 20px;
-font-size: 30px;
-text-align: center;
-}
+        .fa fa-arrow-left{
+            font-size: 84px;
+        }
 
 .rec {
-position: fixed;
-background-color: red;
-bottom: 4vh;
-right: 4vw;
-width: 15vw;
-aspect-ratio: 1;
-line-height: 15vw;
-font-size: 9vw;
-border-radius: 50%;
-text-align: center;
+    position: fixed;
+    background-color: red;
+    bottom: 4vh;
+    right: 4vw;
+    width: 15vw;
+    aspect-ratio: 1;
+    line-height: 15vw;
+    font-size: 9vw;
+    border-radius: 50%;
+    text-align: center;
 }
 
-i {
-color: black;
+.rec i {
+    color: black;
 }
 
 .rec:hover, .rec a:hover {
-background-color: green;
-}
-
-@media (max-width: 768px) {
-.grid-item {
-    font-size: 15px;
-}
-
-header h1 {
-    font-size: 15px;
-}
-
-img {
-    width: 100vw;
-    aspect-ratio: 1.33002481;
-}
-
-.grid-container {
-    grid-template-columns: auto auto;
-}
-}
-
-@media (max-width: 320px) {
-.grid-container {
-    grid-template-columns: auto;
-}
+    background-color: green;
 }
