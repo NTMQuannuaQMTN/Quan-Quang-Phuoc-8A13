@@ -27,6 +27,27 @@
             margin-top: -123px;
         }
         
+        rec {
+    position: fixed;
+    background-color: red;
+    bottom: 4vh;
+    right: 4vw;
+    width: 15vw;
+    aspect-ratio: 1;
+    line-height: 15vw;
+    font-size: 9vw;
+    border-radius: 50%;
+    text-align: center;
+}
+        
+i {
+    color: black;
+}
+        
+.rec:hover, .rec a:hover {
+    background-color: green;
+}
+        
         header h1 {
             width: 81vw;
             font-size: 8vh;
@@ -91,6 +112,9 @@
         <br>
         <button type="submit" onclick="return getClassName()">SUBMIT</button>
       </form>
+        <div class="rec">
+     <a href="Rec.html"><i class="fa fa-microphone" aria-hidden="true"></i></a>
+</div>
     </main>
     <script>
         function getClassName()
