@@ -2,6 +2,11 @@ body {
             background-color: rgb(1, 255, 255);
         }
 
+a form {
+            display: inline-block;
+            margin-left: 28vw;
+        }
+
         a:hover,
         i:hover {
             background-color: red;
