@@ -79,33 +79,19 @@
       <h1>NỘI DUNG CUỘC GHI ÂM</h1>
     </main>
     <script>
-      window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      
-      const recognition = new SpeechRecognition();
-      recognition.interimResults = true;
-      
-      let p = document.createElement('p');
-      const words = document.querySelector('.words');
-      words.appendChild(p);
-      
-      recognition.addEventListener('results', e => {
-        console.log(e.results);
-        const transcript = Array.from(e.results);
-        .map(result = result[0]);
-        .map(result = result.transcript);
-        .join('');
+        const texts = document.querySelector('.texts');
         
-        p.textContent = transcript;
-        if (e.results[0].isFinal) {
-          p = document.createElement('p');
-          words.appendChild(p);
-        }
-        console.log(transcript);
-      });
-      
-      recognition.addEventListener('end', recognition.start);
-      
-      recognition.start();
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new window.speechRecognition();
+		recognition.interimResults = true;
+		
+		let p = document.createElement('p');
+		
+		recognition.addEventListener('result', (e) => {
+			console.log(e);
+		});
+		
+		recognition.start();
     </script>
 </body>
 
