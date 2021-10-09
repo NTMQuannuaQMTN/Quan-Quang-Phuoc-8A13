@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Cảm xúc</title>
+    <title>Ghi âm</title>
     <meta charset="utf-8">
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=1uJ6zZVG"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,6 +65,27 @@
             font-size: 4vh;
             line-height: 5vh;
         }
+	    
+	button {
+	    position: fixed;
+	    background-color: red;
+	    bottom: 4vh;
+	    right: 4vw;
+	    width: 15vw;
+	    aspect-ratio: 1;
+	    line-height: 15vw;
+	    font-size: 9vw;
+	    border-radius: 50%;
+	    text-align: center;
+	}
+
+	button i {
+	    color: black;
+	}
+
+	button:hover {
+	    background-color: green;
+	}
     </style>
 </head>
 
@@ -74,6 +95,8 @@
         <h1>
             NỘI DUNG
         </h1>
+	<div id="result"></div>
+	<button><i class="fa fa-microphone" aria-hidden="true"></i></button>
     </header>
     <main>
       <h1>NỘI DUNG CUỘC GHI ÂM</h1>
