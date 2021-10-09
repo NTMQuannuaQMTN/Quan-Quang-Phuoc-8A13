@@ -102,7 +102,8 @@
     </header>
     <main>
         <h1 align="center">NỘI DUNG CUỘC GHI ÂM</h1>
-	<div id="result"></div> <button onclick="startConverting();"><i class="fa fa-microphone"></i></button>
+	<div id="result"></div>
+	<button onclick="startConverting();"><i class="fa fa-microphone"></i></button>
     </main>
     <script type="text/javascript">
     var r = document.getElementById('result');
@@ -139,7 +140,7 @@
             };
             speechRecognizer.onerror = function(event) {};
         } else {
-            r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
+            r.innerHTML = 'Hệ thống máy bạn không hỗ trợ cái này. Nếu là Google Chrome, hãy nâng cấp.';
         }
     }
 </script>
