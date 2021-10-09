@@ -12,10 +12,13 @@
             background-color: rgb(1, 255, 255);
         }
         
-        a:hover,
-        button:hover {
+        header a:hover {
             background-color: red;
         }
+	    
+	button:hover {
+	    background-color: green;
+	}
 
         header {
             position: fixed;
@@ -90,7 +93,7 @@
     <main>
         <h1 align="center">NỘI DUNG CUỘC GHI ÂM</h1>
 	<div id="result"></div>
-	<button><i class="fa fa-microphone" aria-hidden="true"></i></button>
+	<a><i class="fa fa-microphone" aria-hidden="true"></i><a>
     </main>
     <script>
         const texts = document.querySelector('.texts');
