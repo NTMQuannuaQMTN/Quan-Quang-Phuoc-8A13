@@ -112,7 +112,7 @@
             var speechRecognizer = new webkitSpeechRecognition();
             speechRecognizer.continuous = true;
             speechRecognizer.interimResults = true;
-            speechRecognizer.lang = 'en-IN';
+            speechRecognizer.lang = 'vi';
             speechRecognizer.start();
             var finalTranscripts = '';
             speechRecognizer.onresult = function(event) {
@@ -125,7 +125,7 @@
                         var speechresult = finalTranscripts;
                         console.log(speechresult);
                         if (speechresult) {
-                            responsiveVoice.speak(speechresult, "UK English Female", {
+                            responsiveVoice.speak(speechresult, "Vietnamese Male", {
                                 pitch: 1
                             }, {
                                 rate: 1
