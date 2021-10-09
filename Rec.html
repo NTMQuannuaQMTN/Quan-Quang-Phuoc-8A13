@@ -64,24 +64,24 @@
         
         #result {
 	    	height: 60vh;
-			border: 1px solid red;
-			padding: 10px;
-			margin-bottom: 30px;
-			font-size: 14px;
-			line-height: 25px;
+		border: 1px solid red;
+		padding: 10px;
+		margin-bottom: 30px;
+		font-size: 14px;
+		line-height: 25px;
         }
 		
-		button {
-			font-size: 4vh;
-			width: 5vw;
-			aspect-ratio: 1;
-			position: absolute;
-			bottom: 15px;
-			left: 50%;
-			border-radius: 50%;
-			color: black;
-			background-color: red;
-		}
+	button {
+		font-size: 4vh;
+		width: 5vw;
+		aspect-ratio: 1;
+		position: absolute;
+		bottom: 15px;
+		left: 50%;
+		border-radius: 50%;
+		color: black;
+		background-color: red;
+	}
     </style>
 </head>
 
@@ -98,19 +98,36 @@
 	<button><i class="fa fa-microphone"></i></button>
     </main>
     <script>
-        const texts = document.querySelector('.texts');
-        
-        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new window.speechRecognition();
-		recognition.interimResults = true;
-		
-		let p = document.createElement('p');
-		
-		recognition.addEventListener('result', (e) => {
-			console.log(e.results);
-		});
-		
-		recognition.start();
+        var r = document.getElementbyId('result');
+	function startConverting() {
+	    if ('webkitSppechRecognition' in window) {
+		    var speechRecognizer = new webkitSpeechRecognition();
+		    speechRecognizer.continuous = true;
+		    speechRecognizer.interimResults = true;
+		    speechRecognizer.lang = 'vi';
+		    speechRecognizer.start();
+		    var finalTranscripts = '';
+		    speechRecognizer.onresult = function(event) {
+			var interimTranscripts = '';
+			for (var i = event.resultIndex; i < event.results.length; i++){
+			    var transcript = event.results[i][0].transcript;
+			    transcript.replace("\n", "<br>");
+			    if(event.results[i].isFinal) {
+				finalTranscripts += transcript;
+			    } else {
+				interimTranscripts += transcript;
+			    }
+			}
+			r.innerHTML = finalTranscripts + '<span style="color:red">' + interimTranscripts + </span>;
+		    };
+		    speechRecognizer.onerror = function(event) {
+
+		    };
+		} else {
+			r.innerHTML = 'Trình duyệt web của bạn không hỗ trợ cái này. Nếu bạn dùng Google Chrome, hãy nâng cấp';
+		}
+	}
+	
     </script>
 </body>
 
