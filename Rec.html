@@ -62,7 +62,7 @@
             font-size: 84px;
         }
         
-        #result {
+        .output {
 	    	height: 60vh;
 		border: 1px solid red;
 		padding: 10px;
@@ -94,40 +94,40 @@
     </header>
     <main>
         <h1 align="center">NỘI DUNG CUỘC GHI ÂM</h1>
-	<div id="result"></div>
-	<button><i class="fa fa-microphone"></i></button>
+	<button class="start">START</button>
+	<button class="end">END</button>
+	<textarea class="output"></textarea>
     </main>
     <script type="text/javascript">
-        var r = document.getElementbyId('result');
-	function startConverting() {
-	    if ('webkitSppechRecognition' in window) {
-		    var speechRecognizer = new webkitSpeechRecognition();
-		    speechRecognizer.continuous = true;
-		    speechRecognizer.interimResults = true;
-		    speechRecognizer.lang = 'vi';
-		    speechRecognizer.start();
-		    var finalTranscripts = '';
-		    speechRecognizer.onresult = function(event) {
-			var interimTranscripts = '';
-			for (var i = event.resultIndex; i < event.results.length; i++){
-			    var transcript = event.results[i][0].transcript;
-			    transcript.replace("\n", "<br>");
-			    if(event.results[i].isFinal) {
-				finalTranscripts += transcript;
-			    } else {
-				interimTranscripts += transcript;
-			    }
-			}
-			r.innerHTML = finalTranscripts + '<span style="color:red">' + interimTranscripts + </span>;
-		    };
-		    speechRecognizer.onerror = function(event) {
-
-		    };
-		} else {
-			r.innerHTML = 'Trình duyệt web của bạn không hỗ trợ cái này. Nếu bạn dùng Google Chrome, hãy nâng cấp';
+	class SpeechRecognitionAPI(){
+	    constructor(options) {
+        	const SpeechToText = window.speechRecognition || window.webkitSpeechRecognition;
+		this.speechApi = new speechToText();
+		this.output = options.output ? options.output : document.createElement("div");
+		this.speechApi.continuous = true;
+		this.speechApi.interimResult = false;
+		this.speechApi.onresult = (event) => {
+	            this.output.textContent = event.results[event.resultIndex][0].transcript;
 		}
+	    }
+	    init() {
+		this.speechApi.start();
+	    }
+	    stop() {
+		this.speechApi.stop();
+	    }
 	}
-	
+	window.onload = function() {
+	    var speech = new SpeechRecognitionApi({
+	    	output: document.querySelector(".output")
+	    });
+	    document.querySelector(".start").addEventListener("click", () => {
+	    	speech.init();
+	    });
+	    document.querySelector(".end").addEvenetListener("click", () => {
+	    	speech.stop()
+	    });
+	}
     </script>
 </body>
 
