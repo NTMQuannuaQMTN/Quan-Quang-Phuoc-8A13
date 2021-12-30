@@ -12,6 +12,15 @@
         body {
             background-color: rgb(1, 255, 255);
         }
+	    @media all and (max-width: 425px) {
+            header h1 {
+                width: 70vw;
+            }
+            
+            a {
+                font-size: 60px;
+            }
+        }
         
         a:hover {
             background-color: red;
@@ -92,6 +101,26 @@
 	.end {
 	    right: 33%;
 	}
+    	.rec {
+            position: fixed;
+            background-color: red;
+            bottom: 4vh;
+            right: 4vw;
+            width: 15vw;
+            aspect-ratio: 1;
+            line-height: 15vw;
+            font-size: 9vw;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .rec i {
+            color: black;
+        }
+
+        .rec:hover, .rec a:hover {
+            background-color: green;
+        }
     </style>
 </head>
 
@@ -106,6 +135,7 @@
         <h1 align="center">NỘI DUNG CUỘC GHI ÂM</h1>
 	<div id="result"></div>
 	<button onclick="startConverting();"><i class="fa fa-microphone"></i></button>
+    	<a href="Rec.html"><i class="fa fa-file-o" aria-hidden="true"></i></a>
     </main>
     <script type="text/javascript">
     var r = document.getElementById('result');
