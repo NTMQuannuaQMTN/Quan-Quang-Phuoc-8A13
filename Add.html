@@ -150,11 +150,11 @@ input[type=submit] {
         </h1>
     </header>
     <main>
-      <form autocomplete="off" action="/action_page.php" name="input">
+      <form autocomplete="off" action="getClassName()" name="input">
   <div class="autocomplete" style="width:95vw;">
     <input id="myInput" type="text" id="Input" placeholder="Câu cần điền">
   </div>
-  <input type="submit" onclick="getClassName()">
+  <input type="submit">
 </form>
         <div class="rec">
      <a href="Rec.html"><i class="fa fa-microphone" aria-hidden="true"></i></a>
@@ -253,6 +253,9 @@ input[type=submit] {
   }
 }
 /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
 }
         function getClassName()
         {
