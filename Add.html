@@ -150,11 +150,11 @@ input[type=submit] {
         </h1>
     </header>
     <main>
-      <form autocomplete="off" name="input" onsubmit="getClassName(); return false;">
+      <form autocomplete="off" name="input" onsubmit="return false;">
   <div class="autocomplete" style="width:95vw;">
     <input id="myInput" type="text" id="Input" placeholder="Câu cần điền">
   </div>
-  <input type="submit">
+  <input type="submit" onclick="getClassName();">
 </form>
         <div class="rec">
      <a href="Rec.html"><i class="fa fa-microphone" aria-hidden="true"></i></a>
