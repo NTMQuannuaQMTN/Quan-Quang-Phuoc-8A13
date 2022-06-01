@@ -153,13 +153,6 @@
                         finalTranscripts += transcript;
                         var speechresult = finalTranscripts;
                         console.log(speechresult);
-                        if (speechresult) {
-                            responsiveVoice.speak(speechresult, "Vietnamese Male", {
-                                pitch: 1
-                            }, {
-                                rate: 1
-                            });
-                        }
                     } else {
                         interimTranscripts += transcript;
                     }
