@@ -136,7 +136,10 @@
     </header>
     <main>
         <h1 align="center">NỘI DUNG CUỘC GHI ÂM</h1>
-	<div id="result"></div>
+	<div id="result">
+	    <span id="final" style="color: black"></span>
+      <span id="interim" style="color: red"></span>
+	    </div>
 	<button class="mic" onclick="startConverting();"><i class="fa fa-microphone"></i></button>
 	<button class="pause" onclick="pauseConverting();"><i class="fa fa-pause" aria-hidden="true"></i></button>
 	<div class="rec"><a href="Add.html"><i class="fa fa-file-o" aria-hidden="true"></i></a></div>
@@ -144,41 +147,37 @@
     <script type="text/javascript">
     var r = document.getElementById('result');
 
-    function startConverting() {
-        if ('webkitSpeechRecognition' in window) {
-            var speechRecognizer = new webkitSpeechRecognition();
-            speechRecognizer.continuous = true;
-            speechRecognizer.interimResults = true;
-            speechRecognizer.lang = 'vi';
-            speechRecognizer.start();
-            var finalTranscripts = '';
-            speechRecognizer.onresult = function(event) {
-                var interimTranscripts = '';
-                for (var i = event.resultIndex; i < event.results.length; i++) {
-                    var transcript = event.results[i][0].transcript;
-                    transcript.replace("\n", "<br>");
-                    if (event.results[i].isFinal) {
-                        finalTranscripts += transcript;
-                        var speechresult = finalTranscripts;
-                        console.log(speechresult);
-                    } else {
-                        interimTranscripts += transcript;
-                    }
-                }
-                r.innerHTML = finalTranscripts + '<span style="color:red">' + interimTranscripts + '</span>';
-            };
-            speechRecognizer.onerror = function(event) {};
-        } else {
-            r.innerHTML = 'Hệ thống máy bạn không hỗ trợ cái này. Nếu là Google Chrome, hãy nâng cấp.';
-        }
+    if ("webkitSpeechRecognition" in window) {
+  let speechRecognition = new webkitSpeechRecognition();
+  let final_transcript = "";
+
+  speechRecognition.continuous = true;
+  speechRecognition.interimResults = true;
+  speechRecognition.lang = 'vn';
+
+  speechRecognition.onresult = (event) => {
+    let interim_transcript = "";
+
+    for (let i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
     }
-	    
-    function pauseConverting() {
-    	if ('webkitSpeechRecognition' in window) {
-	    var speechRecognizer = new SpeechRecognition();
-	    speechRecognizer.stop();
-	}
-    }
+    document.querySelector("#final").innerHTML = final_transcript;
+    document.querySelector("#interim").innerHTML = interim_transcript;
+  };
+
+  document.querySelector("#start").onclick = () => {
+    speechRecognition.start();
+  };
+  document.querySelector("#stop").onclick = () => {
+    speechRecognition.stop();
+  };
+} else {
+  console.log("Không có sự hiện diện của hệ thống");
+}
 </script>
 </body>
 
