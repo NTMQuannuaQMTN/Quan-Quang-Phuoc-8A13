@@ -175,7 +175,7 @@
 	    
     function pauseConverting() {
     	if ('webkitSpeechRecognition' in window) {
-	    var speechRecognizer = new webkitSpeechRecognition();
+	    var speechRecognizer = new SpeechRecognition();
 	    speechRecognizer.stop();
 	}
     }
