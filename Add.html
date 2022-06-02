@@ -15,7 +15,6 @@
         
         a:hover,
         header i:hover {
-            background-color: red;
             color: gray;
         }
         
@@ -31,23 +30,23 @@
         
         .rec {
             position: fixed;
-            background-color: red;
+            background-color: white;
             bottom: 4vh;
             left: 4vw;
-            width: 15vw;
-            aspect-ratio: 1;
+            width: fit-content;
+            height: 15vw;
             line-height: 15vw;
             font-size: 9vw;
-            border-radius: 50%;
+    border-radius: 10px;
             text-align: center;
         }
 
-        .rec i {
+        .rec h1 {
             color: black;
         }
 
         .rec:hover, .rec a:hover {
-            background-color: green;
+            background-color: grey;
         }
         
         header h1 {
@@ -98,6 +97,7 @@ input {
   background-color: #f1f1f1;
   padding: 10px;
   font-size: 5vh;
+    border-radius: 10px;
 }
 input[type=text] {
   border: 1px solid black;
@@ -163,7 +163,7 @@ input[type=submit] {
   <input type="submit" onclick="getClassName();">
 </form>
         <div class="rec">
-     <a href="Rec.html"><i class="fa fa-microphone" aria-hidden="true"></i></a>
+            <a href="Rec.html"><h1>TIẾNG THÀNH CHỮ</h1></a>
 </div>
     </main>
     <script>
