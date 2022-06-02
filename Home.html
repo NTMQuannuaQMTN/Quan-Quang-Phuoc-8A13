@@ -46,15 +46,23 @@
 
         .grid-container {
           display: inline-grid;
-          grid-template-columns: auto;
+          grid-template-columns: auto auto;
           background-color: #2196F3;
           padding: 10px;
           width: 100vw;
         }
 
-        .grid-item {
-          background-color: rgba(255, 255, 255, 0.8);
-          border: 10px solid rgba(100, 100, 255, 1);
+        .grid-item1 {
+          background-color: blue;
+          border: 10px solid black;
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+        }
+	    
+	.grid-item2 {
+          background-color: green;
+          border: 10px solid black;
           padding: 20px;
           font-size: 30px;
           text-align: center;
@@ -82,7 +90,7 @@
         }
 
         @media (max-width: 768px) {
-            .grid-item {
+            .grid-item1, .grid-item2 {
                 font-size: 15px;
             }
             .grid-container {
@@ -96,10 +104,11 @@
             }
         }
         
-        .grid-item:hover {
+        .grid-item1:hover, .grid-item2:hover {
             background-color: red;
             color: black;
             font-style: unset;
+		text-decoration: none;
         }
     </style>
 </head>
@@ -116,8 +125,8 @@
     </header>
     <main>
         <div class="grid-container">
-              <div class="grid-item"><a href="Add">CHỮ THÀNH TIẾNG</a></div>
-              <div class="grid-item"><a href="Rec">TIẾNG THÀNH CHỮ</a></div>
+              <div class="grid-item1"><a href="Add">CHỮ THÀNH TIẾNG</a></div>
+              <div class="grid-item2"><a href="Rec">TIẾNG THÀNH CHỮ</a></div>
         </div>
     </main>
 </body>
