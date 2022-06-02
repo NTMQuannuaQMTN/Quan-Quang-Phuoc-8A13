@@ -120,7 +120,6 @@
             background-color: green;
         }
 	
-        a:hover,
         header i:hover {
             background-color: red;
         }
@@ -136,12 +135,13 @@
     </header>
     <main>
         <h1 align="center">NỘI DUNG CUỘC GHI ÂM</h1>
-	<div id="result">
-	    <span id="final" style="color: black"></span>
-      <span id="interim" style="color: red"></span>
-	    </div>
-	<button class="mic" id="start"><i class="fa fa-microphone"></i></button>
-	<button class="pause" id="pause"><i class="fa fa-pause" aria-hidden="true"></i></button>
+	    <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
+      <span id="final" class="text-light"></span>
+      <span id="interim" class="text-secondary"></span>
+    </div>
+    <div class="mt-4">
+      <button class="btn btn-success" id="start"><i class="fa fa-microphone"></i></button>
+      <button class="btn btn-danger" id="stop"><i class="fa fa-pause" aria-hidden="true"></i></button>
 	<div class="rec"><a href="Add.html"><i class="fa fa-file-o" aria-hidden="true"></i></a></div>
     </main>
     <script type="text/javascript">
