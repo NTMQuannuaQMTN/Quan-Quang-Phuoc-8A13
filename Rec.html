@@ -98,6 +98,9 @@
 	    	width: fit-content;
 		    left: 25vh;
 	    }
+	    .btn.btn-warning:focus {
+	    	outline: none;
+	    }
 	
 	.start {
 	    left: 33%;
@@ -165,7 +168,7 @@
 
   speechRecognition.continuous = true;
   speechRecognition.interimResults = true;
-  speechRecognition.lang = "en";
+  speechRecognition.lang = "vn";
 
   speechRecognition.onresult = (event) => {
     let interim_transcript = "";
