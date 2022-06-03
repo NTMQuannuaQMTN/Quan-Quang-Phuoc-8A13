@@ -96,7 +96,7 @@
 	    
 	    .btn.btn-warning {
 	    	width: fit-content;
-		    left: 20vh;
+		    left: 25vh;
 	    }
 	
 	.start {
@@ -187,6 +187,10 @@
   };
   document.querySelector("#stop").onclick = () => {
     speechRecognition.stop();
+  };
+  document.querySelector("#clear").onclick = () => {
+    final_transcript = "";
+    interim_transcript = "";
   };
 } else {
   console.log("Không có sự hiện diện của hệ thống");
