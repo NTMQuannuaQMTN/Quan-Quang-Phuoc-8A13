@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Nhập và đọc</title>
+    <title>Text to Speech</title>
     <meta charset="utf-8">
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=1uJ6zZVG"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -153,17 +153,17 @@ input[type=submit] {
     <header>
         <a href="Home.html"><i class="fa fa-times" aria-hidden="true"></i></a>
         <h1>
-            CHỮ THÀNH TIẾNG
+            TEXT TO SPEECH
         </h1>
     </header>
     <main>
       <form autocomplete="off" name="input" onsubmit="return false;">
   <div class="autocomplete" style="width:95vw;">
-    <input type="text" id="myInput" placeholder="Câu cần điền">
+    <input type="text" id="myInput" placeholder="Insert your sentence here">
       <hr>
   </div>
           <div class="rec">
-            <a href="Rec.html"><h1 style="font-size: 3vh;">TIẾNG THÀNH CHỮ</h1></a>
+            <a href="Rec.html"><h1 style="font-size: 3vh;">SPEECH TO TEXT</h1></a>
 </div>
   <input type="submit" onclick="getClassName();">
 </form>
@@ -269,14 +269,14 @@ input[type=submit] {
         function getClassName()
         {
             var word=document.forms["input"]["myInput"].value;
-            responsiveVoice.speak(word, "Vietnamese Male");
+            responsiveVoice.speak(word, "UK English Male");
             return false;
         }
-        var sentence = ["Chào bạn!", "Bạn khỏe không?", "Mình ổn, dạo này gia đình bạn thế nào?","Bạn được mấy cái nồi bánh chưng rồi nhỉ?","Hôm nay bạn đi đâu thế?",
-                        "Bạn đã ăn gì chưa","Bạn thích ăn gì","Tôi thích ngủ", "Tôi chọn món này", "Tôi có thể mua cái này được không", "Đây là đâu vậy",
-                       "Đây là thứ tôi cần", "Món đồ này bao nhiêu tiền", "Tôi đang ở đâu vậy", "Cảm ơn", "Xin lỗi", "Cho tôi làm phiền một chút được không",
-                       "Đây là thứ tôi muốn mua", "Cho tôi xin thứ này", "Xin chào", "Bạn có rảnh không", "Cho tôi xếp lịch", "Bây giờ là mấy giờ", "Tôi rất vui",
-                       "Tôi rất buồn", "Tôi rất xúc động", "Tôi đang chán"]
+        var sentence = ["Hello!", "How are you?", "I'm good, how is your family?","How old are you?","Where are you going to go today?",
+                        "Have you eaten something?","What do you like to eat?","I like sleeping.", "I choose this one.", "Can I buy this one?", "Where are we now?",
+                       "This is what I need.", "How much is this?", "Where am I now?", "Thanks.", "Sorry.", "Excuse me.",
+                       "This is what I want to buy.", "Can I have this?", "Hi.", "Are you busy?", "Can I have a booking?", "What time is it?", "I'm so happy.",
+                       "I'm so sad", "I'm so emotional", "I'm bored."]
     autocomplete(document.getElementById("myInput"), sentence);
     </script>
 </body>
